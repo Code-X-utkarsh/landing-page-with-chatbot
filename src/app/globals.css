@@ -81,3 +81,41 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* Scroll indicator dot animation */
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(250%);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-dot {
+  animation: scroll-dot 1.8s ease-in-out infinite;
+}
+
+/* Floating animation for About section sphere illustration */
+@keyframes float-y {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+.animate-float-y {
+  animation: float-y 4s ease-in-out infinite;
+}

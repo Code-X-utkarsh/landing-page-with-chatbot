@@ -11,6 +11,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <main className="bg-[#1A2F12] min-h-screen">
+      <Navbar />
       <HeroSection />
       <AboutSection />
       <SpeakerSection />

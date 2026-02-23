@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
+import { ClientChatWidget } from "@/components/ui/ClientChatWidget";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,10 +35,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${montserrat.variable} ${inter.variable} ${spaceGrotesk.variable} antialiased selection:bg-[#FF9800] selection:text-white bg-[#050505]`}
       >
         <Navbar />
         {children}
+        <ClientChatWidget />
       </body>
     </html>
   );

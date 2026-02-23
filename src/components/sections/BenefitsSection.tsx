@@ -1,13 +1,11 @@
 "use client";
 
-
-// import { NetworkScene, PayScene, WLBScene } from "@/components/three/BenefitsScenes"; // Using lightweight motion graphics now
-import { DigitalConstellation, GrowthBeam, ZenBloom } from "@/components/three/MotionGraphics";
+import Image from "next/image";
 
 const benefits = [
-    { title: "Global Network", desc: "Connect with devs worldwide.", color: "#FF9800", shape: "box" },
-    { title: "Higher Pay", desc: "Unlock 3x-5x salary growth.", color: "#8BC34A", shape: "octahedron" },
-    { title: "Better WLB", desc: "Experience true work-life balance.", color: "#FF7043", shape: "sphere" },
+    { title: "Global Network", desc: "Connect with devs worldwide.", image: "/benefit-2.png", color: "from-purple-500/20 to-blue-500/5" },
+    { title: "Higher Pay", desc: "Unlock 3x-5x salary growth.", image: "/benefit-3.png", color: "from-green-500/20 to-emerald-500/5" },
+    { title: "Better WLB", desc: "Experience true work-life balance.", image: "/benefit-1.png", color: "from-orange-500/20 to-amber-500/5" },
 ];
 
 export const BenefitsSection = () => {
@@ -34,14 +32,20 @@ export const BenefitsSection = () => {
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#8BC34A] to-[#3A5A28] rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
 
                             <div className="relative h-full bg-[#0A0F0A] p-8 rounded-3xl border border-white/10 overflow-hidden flex flex-col items-center text-center transition-transform duration-500 group-hover:-translate-y-2">
-                                {/* 3D Icon Container */}
-                                <div className="h-48 w-full mb-8 rounded-2xl overflow-hidden bg-[#050505] relative border border-white/5 shadow-inner">
-                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,195,74,0.1)_0%,transparent_70%)]" />
-                                    {/* Motion Graphics Container */}
-                                    <div className="w-full h-full relative">
-                                        {i === 0 && <DigitalConstellation color={b.color} />}
-                                        {i === 1 && <GrowthBeam color={b.color} />}
-                                        {i === 2 && <ZenBloom color={b.color} />}
+                                {/* Image Container */}
+                                <div className={`h-48 w-full mb-8 rounded-2xl overflow-hidden relative border border-white/5 shadow-inner transition-transform duration-500 group-hover:scale-105 bg-gradient-to-br ${b.color}`}>
+                                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+
+                                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                                        <div className="relative w-full h-full drop-shadow-2xl hover:drop-shadow-[0_20px_20px_rgba(255,255,255,0.1)] transition-all duration-300">
+                                            <Image
+                                                src={b.image}
+                                                alt={b.title}
+                                                fill
+                                                className="object-contain"
+                                                priority={i === 0}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
 
