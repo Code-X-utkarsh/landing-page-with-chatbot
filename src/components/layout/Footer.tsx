@@ -8,7 +8,7 @@ export const Footer = () => {
             <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
                 <div className="text-center md:text-left">
                     <h3 className="text-xl font-bold text-white mb-2 tracking-wider">SDE<span className="text-[#8BC34A]">.ABROAD</span></h3>
-                    <p className="text-[#A1A1AA] text-sm">© 2026 Scaler Masterclass. All rights reserved.</p>
+                    <p className="text-[#A1A1AA] text-sm">© 2026 Utkarsh Priye. All rights reserved.</p>
                 </div>
 
                 <div className="flex gap-6">
